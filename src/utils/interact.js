@@ -7,9 +7,6 @@ const web3 = createAlchemyWeb3(alchemyKey);
 
 const contractABI = require('../contract-abi.json')
 
-//Testing Contract
-// const contractAddress = "0x4129642B7FF0d18ea86654a340C3Bc20e4B6e368";
-
 //Real Address
 const contractAddress = "0xDdEA1171623552ada1becC47F122ab28E05A753D";
 
