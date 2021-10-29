@@ -1,8 +1,5 @@
 import { useEffect, useState } from "react";
-import {
-  connectWallet,
-  getCurrentWalletConnected //import here
-} from "./utils/interact.js";
+import { connectWallet, getCurrentWalletConnected, mintNFT } from "./utils/interact.js";
 
 const Minter = (props) => {
 
@@ -12,6 +9,7 @@ const Minter = (props) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [url, setURL] = useState("");
+  // const [attributes, setAttributes] = useState("");
 
   function addWalletListener() {
     if (window.ethereum) {
@@ -51,9 +49,10 @@ const Minter = (props) => {
     setWallet(walletResponse.address);   
   };
 
-  const onMintPressed = async () => { //TODO: implement
-    
-  };
+  const onMintPressed = async () => {
+    const { status } = await mintNFT(url, name, description );
+    setStatus(status);
+};
 
   return (
     <div className="Minter">
