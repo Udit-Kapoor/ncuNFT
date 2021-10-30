@@ -33,8 +33,10 @@ const Collection = () => {
                 let currentDiv = document.getElementById("content");
                 let content = `
                 <div class="nft">
+                    <a href="${"https://testnets.opensea.io/assets/mumbai/"+e.token_address+"/"+e.token_id}" target="_blank">
                     <p>${data.name}</p>
                     <img src="${data.image}"/>
+                    </a>
                 </div>
                 `
                 currentDiv.innerHTML += content;
