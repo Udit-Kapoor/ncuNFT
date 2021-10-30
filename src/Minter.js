@@ -9,8 +9,13 @@ const Minter = (props) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [url, setURL] = useState("");
-  // const [attributes, setAttributes] = useState("");
-
+  const [department, setDepartment] = useState("");
+  const [designation, setDesignation] = useState("");
+  const [ability, setAbility] = useState("");
+  const [edScore, setEdScore] = useState("");
+  const [pScore, setPScore] = useState("");
+  // const [metadata, setMetadata] = useState("");
+   
   function addWalletListener() {
     if (window.ethereum) {
       window.ethereum.on("accountsChanged", (accounts) => {
@@ -50,7 +55,8 @@ const Minter = (props) => {
   };
 
   const onMintPressed = async () => {
-    const { status } = await mintNFT(url, name, description );
+    const attributes = [{"Department":department,"Designation":designation,"Ability":ability,"ED_Score":edScore,"P_Score":pScore}]
+    const { status } = await mintNFT(url, name, description, attributes);
     setStatus(status);
 };
 
@@ -90,6 +96,36 @@ const Minter = (props) => {
           type="text"
           placeholder="e.g. Even cooler than cryptokitties ;)"
           onChange={(event) => setDescription(event.target.value)}
+        />
+        <h2>✍️ Department: </h2>
+        <input
+          type="text"
+          placeholder="e.g. Even cooler than cryptokitties ;)"
+          onChange={(event) => setDepartment(event.target.value)}
+        />
+        <h2>✍️ Designation: </h2>
+        <input
+          type="text"
+          placeholder="e.g. Even cooler than cryptokitties ;)"
+          onChange={(event) => setDesignation(event.target.value)}
+        />
+        <h2>✍️ Ability: </h2>
+        <input
+          type="text"
+          placeholder="e.g. Even cooler than cryptokitties ;)"
+          onChange={(event) => setAbility(event.target.value)}
+        />
+        <h2>✍️ ED Score: </h2>
+        <input
+          type="number"
+          placeholder="e.g. Even cooler than cryptokitties ;)"
+          onChange={(event) => setEdScore(event.target.value)}
+        />
+        <h2>✍️ P SCore: </h2>
+        <input
+          type="number"
+          placeholder="e.g. Even cooler than cryptokitties ;)"
+          onChange={(event) => setPScore(event.target.value)}
         />
       </form>
       <button id="mintButton" onClick={onMintPressed}>

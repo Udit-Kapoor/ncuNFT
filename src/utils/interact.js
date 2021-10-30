@@ -12,7 +12,7 @@ const contractAddress = "0xDdEA1171623552ada1becC47F122ab28E05A753D";
 
 
 
-export const mintNFT = async(url, name, description) => {
+export const mintNFT = async(url, name, description, attributes) => {
 
   //error handling
   if (url.trim() == "" || (name.trim() == "" || description.trim() == "")) { 
@@ -24,7 +24,7 @@ export const mintNFT = async(url, name, description) => {
 
   //make metadata
   const metadata = new Object();
-  // metadata.attributes = attributes;
+  metadata.attributes = attributes;
   metadata.name = name;
   metadata.image = url;
   metadata.description = description;
