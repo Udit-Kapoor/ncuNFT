@@ -38,21 +38,17 @@
         Moralis.serverURL = "https://3ydt3eazpluk.usemoralis.com:2053/server";
 
         async function getNFT(){
-            let address = document.getElementById('nftaddress').value;
+            let address = "0x57B860Fb7b8FD1DE8d7052241f6D4CC6B5E98F6F"
 
             const options = { 
                 chain: 'mumbai', 
                 address: '0x57B860Fb7b8FD1DE8d7052241f6D4CC6B5E98F6F', 
             };
-            // Get's NFTS Owned By a user Not present in a smart contract
+          
             const polygonNFTs = await Moralis.Web3.getNFTs(options);
             console.log(polygonNFTs);
 
-            // const options2 = { chain: "mumbai", addresses: "0x4129642B7FF0d18ea86654a340C3Bc20e4B6e368" };
-            // const tokenMetadata = await Moralis.Web3API.token.getTokenMetadata(options);
-            // console.log(tokenMetadata);
-
-            //Loop over the array
+            
             polygonNFTs.forEach( e => {
                 let url = e.token_uri;
 

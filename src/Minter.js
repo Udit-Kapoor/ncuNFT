@@ -88,9 +88,9 @@ const Minter = (props) => {
         <h2>NFT<span>Collectables</span></h2>
       </Logo>
       <Menu>
-        <MenuLink href="">Home</MenuLink>
-        <MenuLink href="">Mint</MenuLink>
-        <MenuLink href="">Marketplace</MenuLink>
+        <MenuLink href="#">Home</MenuLink>
+        <MenuLink href="#mint">Mint</MenuLink>
+        <MenuLink href="#nfts">Marketplace</MenuLink>
       </Menu>
       <button id="walletButton" onClick={connectWalletPressed}>
         {walletAddress.length > 0 ? (
@@ -105,9 +105,10 @@ const Minter = (props) => {
       </Nav>
       <HomeScreen />
       </Header>
+      <div id="nfts"></div>
       <Collection />
       <br></br>
-      <h1 id="title">🧙‍♂️ Mint NFTs</h1>
+      <h1 id="mint">🧙‍♂️ Mint NFTs</h1>
       <p className="tittle_bottom">
         (Admin only)
       </p>
