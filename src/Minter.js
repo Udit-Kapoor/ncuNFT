@@ -4,6 +4,7 @@ import styled from "styled-components";
 import ncuLogo from "./img/logo.png"
 import HomeScreen from "./comp/HomeScreen"
 import Collection from "./comp/Collection"
+import Footer from "./comp/Footer"
 
 const Minter = (props) => {
 
@@ -176,6 +177,7 @@ const Minter = (props) => {
       <p id="status">
         {status}
       </p>
+      <Footer />
     </Container>
   );
 };
